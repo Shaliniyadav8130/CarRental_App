@@ -1,4 +1,4 @@
-import 'package:carrental/MobileScreens/OnboardScreens/OnboardScreen.dart';
+import 'package:carrental/MobileScreens/OnboardScreens/OnboardScreen1.dart';
 import 'package:carrental/MobileScreens/UserLogin/Login.dart';
 import 'package:carrental/MobileScreens/UserRegistration/widgets/ButtonWidget.dart';
 import 'package:carrental/MobileScreens/UserRegistration/widgets/OrWidget.dart';

@@ -7,11 +7,13 @@ class TextFormFieldWidget extends StatelessWidget{
   final TextEditingController controller;
   final String hintText;
   final bool obscureText;
+  final int? maxLines;
 
   TextFormFieldWidget({
     required this.controller,
     required this.hintText,
     this.obscureText = false,
+    this.maxLines,
 
   });
 
@@ -24,6 +26,7 @@ class TextFormFieldWidget extends StatelessWidget{
       ),
       child: TextFormField(
         controller: controller,
+        maxLines: maxLines,
         obscureText: obscureText,
         decoration: InputDecoration(
           hintText: hintText,

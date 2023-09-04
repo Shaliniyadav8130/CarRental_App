@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 class CircularButton extends StatelessWidget {
   final IconData icon;
+  final Color color1;
   final VoidCallback onPressed;
 
-  CircularButton({required this.icon, required this.onPressed});
+  CircularButton({required this.icon, required this.color1,required this.onPressed,});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class CircularButton extends StatelessWidget {
         height: 50.0,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: Color(0xffEF3D49), // Customize the button color as needed
+          color: color1, // Customize the button color as needed
         ),
         child: Center(
           child: Icon(

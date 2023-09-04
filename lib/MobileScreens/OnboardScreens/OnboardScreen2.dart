@@ -1,15 +1,18 @@
+import 'package:carrental/MobileScreens/OnboardScreens/OnboardScreen1.dart';
+import 'package:carrental/MobileScreens/OnboardScreens/OnboardScreen3.dart';
 import 'package:carrental/MobileScreens/OnboardScreens/OnboardWidgets/Illustration.dart';
 import 'package:carrental/MobileScreens/OnboardScreens/OnboardWidgets/PageDotWidget.dart';
 import 'package:carrental/MobileScreens/OnboardScreens/OnboardWidgets/ScreenArrow.dart';
 import 'package:carrental/MobileScreens/OnboardScreens/OnboardWidgets/Text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
-class OnboardScreen extends StatefulWidget {
+class OnboardScreen2 extends StatefulWidget {
   @override
-  _OnboardScreenState createState() => _OnboardScreenState();
+  _OnboardScreen2State createState() => _OnboardScreen2State();
 }
 
-class _OnboardScreenState extends State<OnboardScreen> {
+class _OnboardScreen2State extends State<OnboardScreen2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,11 +31,11 @@ class _OnboardScreenState extends State<OnboardScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(padding: EdgeInsets.only(left:25),
-                    child:PageDotWidget(color1: Color(0xffEF3D49), color2: Color(0x33EF3D49), color3: Color(0x33EF3D49), color4: Color(0x33EF3D49)),
+                      child:PageDotWidget(color1: Color(0x33EF3D49), color2: Color(0xffEF3D49), color3: Color(0x33EF3D49), color4: Color(0x33EF3D49)),
                     ),
 
                     Padding(padding: EdgeInsets.only(right:25),
-                     child:Text("Skip",style: TextStyle(color: Colors.black,fontSize: 12),),
+                      child:Text("Skip",style: TextStyle(color: Colors.black,fontSize: 12),),
                     ),
 
 
@@ -44,7 +47,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 SizedBox(height: 40),
 
                 TextWidget(
-                  Headingtext: "Best Car Rental",
+                  Headingtext: "Rent your Dream car!",
                   Subtext:
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 ),
@@ -59,8 +62,11 @@ class _OnboardScreenState extends State<OnboardScreen> {
             children: [
               CircularButton(
                 icon: Icons.arrow_back,
+                 color1:Color(0xffEF3D49),
                 onPressed: () {
-                  // Add your backward arrow button logic here
+                  Navigator.push(context,
+                      CupertinoPageRoute(builder: (context) => OnboardScreen()
+                      ));
                 },
               ),
 
@@ -68,8 +74,11 @@ class _OnboardScreenState extends State<OnboardScreen> {
 
               CircularButton(
                 icon: Icons.arrow_forward,
+                color1:Color(0xffEF3D49),
                 onPressed: () {
-                  // Add your forward arrow button logic here
+                  Navigator.push(context,
+                      CupertinoPageRoute(builder: (context) => OnboardScreen3()
+                      ));
                 },
               ),
 

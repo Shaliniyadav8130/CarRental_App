@@ -1,8 +1,10 @@
 import 'package:carrental/MobileScreens/UserScreens/AccountScreen.dart';
 import 'package:carrental/MobileScreens/UserScreens/LikedScreen.dart';
 import 'package:carrental/MobileScreens/UserScreens/SearchScreen.dart';
+import 'package:carrental/MobileScreens/constants/images.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
@@ -19,16 +21,122 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   var controller=Get.put(HomeContoller());
 
+   List<ColorFiltered> unselectedIcons = [
+    ColorFiltered(
+      colorFilter: ColorFilter.mode(
+        Colors.grey, // Change the color here
+        BlendMode.srcIn,
+      ),
+      child: SvgPicture.asset(
+        "assets/images/home/HomeIcon.svg",
+        width: 24,
+        height: 24,
+      ),
+    ),
+    ColorFiltered(
+      colorFilter: ColorFilter.mode(
+        Colors.grey, // Change the color here
+        BlendMode.srcIn,
+      ),
+      child: SvgPicture.asset(
+        "assets/images/home/SearchIcon.svg",
+        width: 24,
+        height: 24,
+      ),
+    ),
+    ColorFiltered(
+      colorFilter: ColorFilter.mode(
+        Colors.grey, // Change the color here
+        BlendMode.srcIn,
+      ),
+      child: SvgPicture.asset(
+        "assets/images/home/HeartIcon.svg",
+        width: 24,
+        height: 24,
+      ),
+    ),
+    ColorFiltered(
+      colorFilter: ColorFilter.mode(
+        Colors.grey, // Change the color here
+        BlendMode.srcIn,
+      ),
+      child: SvgPicture.asset(
+        "assets/images/home/ProfileIcon.svg",
+        width: 24,
+        height: 24,
+      ),
+    )
+
+  ];
+  List<ColorFiltered> selectedIcons = [
+    ColorFiltered(
+      colorFilter: ColorFilter.mode(
+        Colors.deepOrange, // Change the color here
+        BlendMode.srcIn,
+      ),
+      child: SvgPicture.asset(
+        "assets/images/home/HomeIcon.svg",
+        width: 24,
+        height: 24,
+      ),
+    ),
+    ColorFiltered(
+      colorFilter: ColorFilter.mode(
+        Colors.deepOrange, // Change the color here
+        BlendMode.srcIn,
+      ),
+      child: SvgPicture.asset(
+        "assets/images/home/SearchIcon.svg",
+        width: 24,
+        height: 24,
+      ),
+    ),
+    ColorFiltered(
+      colorFilter: ColorFilter.mode(
+        Colors.deepOrange, // Change the color here
+        BlendMode.srcIn,
+      ),
+      child: SvgPicture.asset(
+        "assets/images/home/HeartIcon.svg",
+        width: 24,
+        height: 24,
+      ),
+    ),
+    ColorFiltered(
+      colorFilter: ColorFilter.mode(
+        Colors.deepOrange, // Change the color here
+        BlendMode.srcIn,
+      ),
+      child: SvgPicture.asset(
+        "assets/images/home/ProfileIcon.svg",
+        width: 24,
+        height: 24,
+      ),
+    )
+
+  ];
+
   var navbarItem=[
-    BottomNavigationBarItem(icon: Icon(Icons.home_filled),label: "Home"),
-    BottomNavigationBarItem(icon: Icon(Icons.search),label: "Categories"),
-    BottomNavigationBarItem(icon: Icon(Icons.heart_broken),label: "My Cart"),
-    BottomNavigationBarItem(icon: Icon(Icons.account_box_outlined),label: "Profile"),
+    BottomNavigationBarItem(icon:
+    ColorFiltered(
+      colorFilter: ColorFilter.mode(
+        Colors.blue, // Change the color here
+        BlendMode.dstIn,
+      ),
+      child: SvgPicture.asset(
+        "assets/images/home/HomeIcon.svg",
+        width: 24,
+        height: 24,
+      ),
+    ),label: "Home"),
+    BottomNavigationBarItem(icon: SvgPicture.asset("assets/images/home/SearchIcon.svg"),label: "Categories"),
+    BottomNavigationBarItem(icon: SvgPicture.asset(heartIcon),label: "My Cart"),
+    BottomNavigationBarItem(icon: SvgPicture.asset(accountIcon),label: "Profile"),
 
   ];
 
   var navBody=[
-    const HomeScreen(),const SearchScreen(),const LikedScreen(),const AccountScreen()
+    HomeScreen(),SearchScreen(),const LikedScreen(),const AccountScreen()
 
   ];
 
@@ -41,8 +149,26 @@ class _MainScreenState extends State<MainScreen> {
         ],
       ),
       bottomNavigationBar: Obx(()=>
-          BottomNavigationBar(currentIndex: controller.currentNavIndex.value,items: navbarItem,backgroundColor: CupertinoColors.white,type: BottomNavigationBarType.fixed,
+          BottomNavigationBar(currentIndex: controller.currentNavIndex.value,items:
+          List.generate(
+            navbarItem.length,
+                (index) => BottomNavigationBarItem(
+              icon: controller.currentNavIndex.value == index
+                  ?
+              selectedIcons[index]
+                  : unselectedIcons[index],
+              label: navbarItem[index].label,
+            ),
+          ),
+            
+            backgroundColor: CupertinoColors.white,type: BottomNavigationBarType.fixed,
             selectedItemColor: Colors.deepOrange,
+            unselectedItemColor: Colors.grey,
+            unselectedIconTheme: IconThemeData(color: Colors.black12),
+            selectedIconTheme: IconThemeData(
+              fill: .8,
+              color: Colors.deepOrange
+            ),
             onTap: (value){
               controller.currentNavIndex.value=value;
             },

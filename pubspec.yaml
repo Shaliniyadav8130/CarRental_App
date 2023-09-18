@@ -39,6 +39,9 @@ dependencies:
   velocity_x: ^4.0.0
   get: ^4.3.8
   http: ^0.13.3
+  provider: ^6.0.5
+  page_transition: ^2.0.9
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +69,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/home/
+    - assets/images/company/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_transition/page_transition.dart';
 
-class DealersCardWidget extends StatelessWidget {
+class PlansCard extends StatelessWidget {
   final VoidCallback onPressedlisting;
   final VoidCallback onPressedbadge;
 
 
 
-  DealersCardWidget({
+  PlansCard({
     required this.onPressedlisting,
     required this.onPressedbadge,
 
@@ -139,6 +139,23 @@ class DealersCardWidget extends StatelessWidget {
 
                     ),
 
+                  ],
+                ),
+
+                Row(
+                  children: [
+                    Expanded(
+                      child:ElevatedButton(
+                        onPressed: onPressedlisting,
+                        style: ElevatedButton.styleFrom(
+                          primary: Color(0xffE8E8E8),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                        ),
+                        child: Text('Send notification alert',style: TextStyle(color: Colors.black),),
+                      ),
+                    ),
                   ],
                 ),
 

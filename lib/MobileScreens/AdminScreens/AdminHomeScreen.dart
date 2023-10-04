@@ -1,5 +1,10 @@
+import 'package:carrental/MobileScreens/AdminScreens/BrandAdvertisements/BrandAdvertisemets.dart';
+import 'package:carrental/MobileScreens/AdminScreens/Dealers/FeaturedDealers.dart';
+import 'package:carrental/MobileScreens/AdminScreens/Dealers/ManageDealersAccount.dart';
+import 'package:carrental/MobileScreens/AdminScreens/Dealers/PremiumSubscription.dart';
 import 'package:carrental/MobileScreens/AdminScreens/Dealers/VerifiedDealers.dart';
 import 'package:carrental/MobileScreens/AdminScreens/Dealers/VerifiedRequestWidget.dart';
+import 'package:carrental/MobileScreens/AdminScreens/PlansTimeline/PlansTimeline.dart';
 import 'package:carrental/MobileScreens/MainUserScreens/UserScreens/ThemeScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +65,7 @@ class AdminHomeScreen extends StatelessWidget {
                       InkWell(
                         onTap: () {
                           Navigator.push(context,
-                              CupertinoPageRoute(builder: (context) => ThemeScreen()
+                              CupertinoPageRoute(builder: (context) => FeaturedDealers()
                               ));
 
                           print("Tapped!");
@@ -78,55 +83,103 @@ class AdminHomeScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 20),
-                      Center(
-                        child: Row(
-                          children: [
-                            Image.asset("assets/images/Vector.png"),
-                            SizedBox(width: 6),
-                            Text("Premium subscription", style: TextStyle(fontSize: 15)),
-                            Spacer(),
-                            Icon(Icons.arrow_forward),
-                          ],
+
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context,
+                              CupertinoPageRoute(builder: (context) => PremiumSubscription()
+                              ));
+
+                          print("Tapped!");
+                        },
+
+                        child: Center(
+                          child: Row(
+                            children: [
+                              Image.asset("assets/images/Vector.png"),
+                              SizedBox(width: 6),
+                              Text("Premium subscription", style: TextStyle(fontSize: 15)),
+                              Spacer(),
+                              Icon(Icons.arrow_forward),
+                            ],
+                          ),
                         ),
+
                       ),
 
                       SizedBox(height: 20),
-                      Center(
-                        child: Row(
-                          children: [
-                            Image.asset("assets/images/Vector.png"),
-                            SizedBox(width: 6),
-                            Text("Plans Timeline", style: TextStyle(fontSize: 15)),
-                            Spacer(),
-                            Icon(Icons.arrow_forward),
-                          ],
+
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context,
+                              CupertinoPageRoute(builder: (context) => PlansTimeline()
+                              ));
+
+                          print("Tapped!");
+
+                        },
+                        child:Center(
+                          child: Row(
+                            children: [
+                              Image.asset("assets/images/Vector.png"),
+                              SizedBox(width: 6),
+                              Text("Plans Timeline", style: TextStyle(fontSize: 15)),
+                              Spacer(),
+                              Icon(Icons.arrow_forward),
+                            ],
+                          ),
                         ),
+
                       ),
 
                       SizedBox(height: 20),
-                      Center(
-                        child: Row(
-                          children: [
-                            Image.asset("assets/images/Vector.png"),
-                            SizedBox(width: 6),
-                            Text("Manage Dealers Account", style: TextStyle(fontSize: 15)),
-                            Spacer(),
-                            Icon(Icons.arrow_forward),
-                          ],
+
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context,
+                              CupertinoPageRoute(builder: (context) => ManageDealersAccount()
+                              ));
+
+                          print("Tapped!");
+
+                        },
+                        child:Center(
+                          child: Row(
+                            children: [
+                              Image.asset("assets/images/Vector.png"),
+                              SizedBox(width: 6),
+                              Text("Manage Dealers Account", style: TextStyle(fontSize: 15)),
+                              Spacer(),
+                              Icon(Icons.arrow_forward),
+                            ],
+                          ),
                         ),
+
                       ),
 
                       SizedBox(height: 20),
-                      Center(
-                        child: Row(
-                          children: [
-                            Image.asset("assets/images/Vector.png"),
-                            SizedBox(width: 6),
-                            Text("Brand advertisements", style: TextStyle(fontSize: 15)),
-                            Spacer(),
-                            Icon(Icons.arrow_forward),
-                          ],
+
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context,
+                              CupertinoPageRoute(builder: (context) => BrandAdvertisements()
+                              ));
+
+                          print("Tapped!");
+
+                        },
+                        child: Center(
+                          child: Row(
+                            children: [
+                              Image.asset("assets/images/Vector.png"),
+                              SizedBox(width: 6),
+                              Text("Brand advertisements", style: TextStyle(fontSize: 15)),
+                              Spacer(),
+                              Icon(Icons.arrow_forward),
+                            ],
+                          ),
                         ),
+
                       ),
 
 

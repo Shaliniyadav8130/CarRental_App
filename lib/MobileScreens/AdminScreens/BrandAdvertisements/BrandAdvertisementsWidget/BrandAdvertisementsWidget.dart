@@ -1,22 +1,20 @@
 import 'package:carrental/MobileScreens/AdminScreens/Dealers/DealersListing.dart';
 import 'package:carrental/MobileScreens/CompanyScreens/HomeScreens/EditDetails.dart';
+import 'package:carrental/MobileScreens/MainUserScreens/UserScreens/HomeWidget/CustomContainer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_transition/page_transition.dart';
 
-class DealersCardWidget extends StatelessWidget {
+class BrandAdvertisementCard extends StatelessWidget {
   final VoidCallback onPressedlisting;
   final VoidCallback onPressedbadge;
 
 
-
-  DealersCardWidget({
+  BrandAdvertisementCard({
     required this.onPressedlisting,
     required this.onPressedbadge,
-
   });
-
 
   // PendingRequestWidget({
   // });
@@ -60,22 +58,12 @@ class DealersCardWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text("Johnson",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),textAlign: TextAlign.left,),
-                          Text("here123@gmail.com",style: TextStyle(color: Color(0x66000000),fontSize: 15),),
-                          //SizedBox(height: 5,),
                           Text("+91 9999 999 999",style: TextStyle(fontSize: 15,color: Color(0x66000000)),),
-                          Row(
-                            children: [
-                              Text("Feature expires in",style: TextStyle(fontSize: 15,color: Color(0x66000000)),),
-                              SizedBox(width:2),
-                              Text("21 days",style: TextStyle(fontSize: 15,color: Color(0xff6CD248)),),
-                            ],
-                          ),
                           SizedBox(height:10),
                         ],
                       ),
 
                     ),
-
 
                     //SizedBox(width:5),
 
@@ -85,18 +73,14 @@ class DealersCardWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children:[
-                            Image.asset("assets/images/Delete 2.png")
-                            // ColorFiltered(
-                            //   colorFilter: ColorFilter.mode(
-                            //     Colors.grey, // Change the color here
-                            //     BlendMode.srcIn,
-                            //   ),
-                            //   child: SvgPicture.asset(
-                            //     "assets/images/home/HeartIcon.svg",
-                            //     width: 24,
-                            //     height: 24,
-                            //   ),
-                            // ),
+                            Row(
+                              children: [
+                                Image.asset("assets/images/Edit.png"),
+                                SizedBox(width:4),
+                                Image.asset("assets/images/Delete 2.png")
+
+                              ],
+                            ),
 
                           ]
 
@@ -105,6 +89,62 @@ class DealersCardWidget extends StatelessWidget {
                     ),
 
                   ],
+                ),
+
+                Row(
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Display posters",style: TextStyle(fontSize: 15,color: Color(0xff000000)),),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CustomContainers(width: 54,height:61,borderRadius: 5,color: Color(0xffD9D9D9),),
+
+                            SizedBox(width:5),
+
+                            CustomContainers(width: 54,height:61,borderRadius: 5,color: Color(0xffD9D9D9),),
+
+                            SizedBox(width:5),
+
+                            CustomContainers(width: 54,height:61,borderRadius: 5,color: Color(0xffD9D9D9),),
+
+                          ],
+                        ),
+                      ],
+                    ),
+
+                    SizedBox(width:10),
+
+                    Expanded(
+                        child: CustomContainers(
+                          borderRadius: 15,
+                          height:84,
+                          width:171,
+                          color: Color(0xffFFFFFF),
+                          borderColor: Color(0x1A000000),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10,vertical:10),
+                            child:  Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("1 month Plan",style: TextStyle(fontSize: 12,color: Color(0xff232121),fontWeight: FontWeight.bold),textAlign: TextAlign.left,),
+                                Text("21 days",style: TextStyle(fontSize: 15,color: Color(0xff232121),fontWeight: FontWeight.bold),textAlign: TextAlign.left,),
+                                Text("left of 30 days",style: TextStyle(fontSize: 12,color: Color(0xff232121),),textAlign: TextAlign.left,),
+
+                              ],
+                            ),
+
+                          ),
+                         )
+
+                    ),
+                    
+                    ],
                 ),
 
                 //SizedBox(height:3),
@@ -119,7 +159,7 @@ class DealersCardWidget extends StatelessWidget {
                             borderRadius: BorderRadius.circular(16.0),
                           ),
                         ),
-                        child: Text('View listing',style: TextStyle(color: Colors.black),),
+                        child: Text('View ads',style: TextStyle(color: Colors.black),),
                       ),
                     ),
 
@@ -134,11 +174,28 @@ class DealersCardWidget extends StatelessWidget {
                             borderRadius: BorderRadius.circular(16.0),
                           ),
                         ),
-                        child: Text('Renew badge',style: TextStyle(color: Colors.white),),
+                        child: Text('Renew',style: TextStyle(color: Colors.white),),
                       ),
 
                     ),
 
+                  ],
+                ),
+
+                Row(
+                  children: [
+                    Expanded(
+                      child:ElevatedButton(
+                        onPressed: onPressedlisting,
+                        style: ElevatedButton.styleFrom(
+                          primary: Color(0xffE8E8E8),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                        ),
+                        child: Text('Send notification alert',style: TextStyle(color: Colors.black),),
+                      ),
+                    ),
                   ],
                 ),
 

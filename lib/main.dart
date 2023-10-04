@@ -1,19 +1,10 @@
 import 'package:carrental/MobileScreens/AdminScreens/AdminHomeScreen.dart';
 import 'package:carrental/MobileScreens/AdminScreens/BrandAdvertisements/BrandAdvertisemets.dart';
-import 'package:carrental/MobileScreens/AdminScreens/Dealers/DealersListing.dart';
-import 'package:carrental/MobileScreens/AdminScreens/Dealers/FeaturedDealers.dart';
-import 'package:carrental/MobileScreens/AdminScreens/Dealers/ManageDealersAccount.dart';
-import 'package:carrental/MobileScreens/AdminScreens/Dealers/PremiumSubscription.dart';
-import 'package:carrental/MobileScreens/AdminScreens/Dealers/VerifiedDealers.dart';
-import 'package:carrental/MobileScreens/MainUserScreens/AdditionalInformation/AdditionalInformation.dart';
-import 'package:carrental/MobileScreens/CompanyScreens/CompanyMainScreen.dart';
-import 'package:carrental/MobileScreens/CompanyScreens/HomeScreens/AddNewScreen.dart';
-import 'package:carrental/MobileScreens/CompanyScreens/HomeScreens/CompanyHomeScreen.dart';
-import 'package:carrental/MobileScreens/CompanyScreens/HomeScreens/EditDetails.dart';
-import 'package:carrental/MobileScreens/CompanyScreens/HomeScreens/Subscriptions/FeaturedSubscription.dart';
-import 'package:carrental/MobileScreens/CompanyScreens/HomeScreens/Subscriptions/VerifiedSubscription.dart';
-import 'package:carrental/MobileScreens/MainUserScreens/UserRegistration/Signup.dart';
-import 'package:carrental/MobileScreens/MainUserScreens/UserScreens/HomeWidget/SearchFilter.dart';
+import 'package:carrental/MobileScreens/AdminScreens/CreateNewBrands/CreateNewBrands.dart';
+import 'package:carrental/MobileScreens/AdminScreens/PlansTimeline/PlansTimeline.dart';
+import 'package:carrental/MobileScreens/AdminScreens/RenewScreen/RenewScreen.dart';
+import 'package:carrental/MobileScreens/AdminScreens/ViewAds/ViewAds.dart';
+import 'package:carrental/MobileScreens/SplashScreen/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -32,7 +23,7 @@ class MyApp extends StatelessWidget {
         //colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const BrandAdvertisements(),
+      home: SplashScreen(),
     );
   }
 }
